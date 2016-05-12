@@ -1,5 +1,6 @@
 package com.example.yggdralisk.wroclawtouristhelper;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -53,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
     //-------------------------------------Buttons methods------------------------------
     public void moveToBikePoints(View view) {
+        Intent intent = new Intent(this,BikePointsActivity.class);
+        startActivity(intent);
     }
 
     public void moveToBusStops(View view) {
