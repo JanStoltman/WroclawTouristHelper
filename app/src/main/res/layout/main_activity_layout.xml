@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:id = "@+id/activity_main_linear_layut">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_directions_bike_white_24dp"
+        android:background="@android:color/transparent"
+        android:layout_margin="10dp"
+        android:onClick="moveToBikePoints"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_directions_bus_white_24dp"
+        android:background="@android:color/transparent"
+        android:layout_margin="10dp"
+        android:onClick="moveToBusStops"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_satellite_white_24dp"
+        android:background="@android:color/transparent"
+        android:layout_margin="10dp"
+        android:onClick="moveToMap"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_wifi_white_24dp"
+        android:background="@android:color/transparent"
+        android:layout_margin="10dp"
+        android:onClick="moveToWiFiPoints"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_local_library_white_24dp"
+        android:background="@android:color/transparent"
+        android:layout_margin="10dp"
+        android:onClick="moveToLibraries"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_info_outline_white_24dp"
+        android:background="@android:color/transparent"
+        android:layout_margin="10dp"
+        android:onClick="moveToInfo"/>
+</LinearLayout>

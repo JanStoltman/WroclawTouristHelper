@@ -12,7 +12,8 @@ android {
         versionName "1.0"
 
 
-        buildConfigField("String", "DUMMY_API_KEY", DUMMY_API_KEY)
+        buildConfigField("String", "OPEN_DATA_KEY", OPEN_DATA_KEY)
+        buildConfigField("String", "GOOGLE_MAPS_KEY", GOOGLE_MAPS_KEY)
     }
     buildTypes {
         release {
@@ -23,8 +24,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:design:23.4.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.jakewharton:butterknife:8.0.1'
+    compile 'com.google.android.gms:play-services-maps:8.4.0'
 }
