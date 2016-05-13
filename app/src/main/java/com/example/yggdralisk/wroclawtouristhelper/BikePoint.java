@@ -21,8 +21,8 @@ public class BikePoint {
     public BikePoint() {
     }
 
-    public void setLp(int lp) {
-        this.lp = lp;
+    public void setLp(double lp) {
+        this.lp = (int)lp;
     }
 
     public void setSystem(String system) {

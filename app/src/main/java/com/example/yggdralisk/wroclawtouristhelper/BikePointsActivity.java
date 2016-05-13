@@ -20,6 +20,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -53,57 +54,26 @@ public class BikePointsActivity extends AppCompatActivity {
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-
-                try {
-                    File path = Environment.getExternalStorageDirectory();
-                    File file = new File(path, FILE_NAME);
-                    FileOutputStream outputStream = new FileOutputStream(file);
-                    outputStream.write(response.body().string().getBytes());
-                    outputStream.close();
-
-                    readFile();
-                } catch (IOException e) {
-                    Log.e("WRITE", "Error while writing file!");
-                    Log.e("WRITE", e.toString());
-
-                    File path = Environment.getExternalStorageDirectory();
-                    File file = new File(path, FILE_NAME);
-                    if (file.exists()) {
-                        readFile();
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Write error!", Toast.LENGTH_LONG).show();
-                    }
-                }
+                readFile(response.body().byteStream());
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 Log.e("WRITE", "Error while downloading file!");
-
-                File path = Environment.getExternalStorageDirectory();
-                File file = new File(path, FILE_NAME);
-                if (file.exists()) {
-                    readFile();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Connection error!", Toast.LENGTH_LONG).show();
-                }
+                Toast.makeText(getApplicationContext(), "Connection error!", Toast.LENGTH_LONG).show();
             }
         });
     }
 
-    private void readFile() {
-        File path = Environment.getExternalStorageDirectory();
-        File file = new File(path, FILE_NAME);
-        FileInputStream fis = null;
+    private void readFile(InputStream inputStream) {
         try {
-            fis = new FileInputStream(file);
-            HSSFWorkbook   myWorkBook = new HSSFWorkbook(fis);
+            HSSFWorkbook myWorkBook = new HSSFWorkbook(inputStream);
 
             HSSFSheet mySheet = myWorkBook.getSheetAt(0);
 
             // We now need something to iterate through the cells
             Iterator<Row> rowIter = mySheet.rowIterator();
-            while(rowIter.hasNext()) {
+            while (rowIter.hasNext()) {
 
                 HSSFRow myRow = (HSSFRow) rowIter.next();
                 if (myRow.getRowNum() < 1) { //Bypassing first row with column names
@@ -127,7 +97,7 @@ public class BikePointsActivity extends AppCompatActivity {
 
                     switch (myCell.getColumnIndex()) { // Set Bike point Values
                         case 0:
-                            bikePoint.setLp(Integer.valueOf(cellValue));
+                            bikePoint.setLp(Double.valueOf(cellValue));
                             break;
                         case 1:
                             bikePoint.setSystem(cellValue);
@@ -147,8 +117,6 @@ public class BikePointsActivity extends AppCompatActivity {
                 }
                 bikePoints.add(bikePoint);
             }
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
