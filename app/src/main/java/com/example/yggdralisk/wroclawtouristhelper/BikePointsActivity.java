@@ -34,7 +34,6 @@ import retrofit2.Retrofit;
  * Created by yggdralisk on 12.05.16.
  */
 public class BikePointsActivity extends AppCompatActivity {
-    private static final String FILE_NAME = "BikePoints.xls";
     ArrayList<BikePoint> bikePoints = new ArrayList<>();
 
     @Override
