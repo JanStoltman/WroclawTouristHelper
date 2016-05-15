@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -23,13 +24,12 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.activity_main_linear_layut) LinearLayout linearLayout;
+     LinearLayout linearLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity_layout);
-        ButterKnife.bind(this);
 
         linearLayout = ButterKnife.findById(this,R.id.activity_main_linear_layut);
 
@@ -37,14 +37,14 @@ public class MainActivity extends AppCompatActivity {
         int hour = c.get(Calendar.HOUR_OF_DAY);
 
         int picId;
-        if(hour<12) picId = R.drawable.moring_pic;
-        else picId = R.drawable.main_pic;
-
+        if(hour<10) picId = R.drawable.moring_pic;
+        else if(hour < 19) picId = R.drawable.main_pic;
+        else picId = R.drawable.evening_pic;
 
         Glide.with(getApplicationContext()).load(picId).asBitmap().into(new SimpleTarget<Bitmap>(1500, 1500) {
             @Override
-            public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
-                Drawable drawable = new BitmapDrawable(resource);
+            public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
+                Drawable drawable = new BitmapDrawable(getResources(),bitmap);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     linearLayout.setBackground(drawable);
                 }
@@ -59,17 +59,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void moveToBusStops(View view) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://wroclaw.jakdojade.pl/")));
     }
 
     public void moveToMap(View view) {
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://gis.um.wroc.pl/imap/?locale=pl&gui=classic&sessionID=223261")));
     }
 
-    public void moveToWiFiPoints(View view) {
-    }
+  //  public void moveToWiFiPoints(View view) {
+  //  }
 
     public void moveToLibraries(View view) {
     }
 
     public void moveToInfo(View view) {
+        Intent intent = new Intent(this,InfoActivity.class);
+        startActivity(intent);
+    }
+
+    public void moveToEvents(View view) {
     }
 }

@@ -29,14 +29,14 @@
         android:background="@android:color/transparent"
         android:layout_margin="10dp"
         android:onClick="moveToMap"/>
-    <ImageButton
+    <!--<ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:src="@drawable/ic_wifi_white_24dp"
         android:background="@android:color/transparent"
         android:layout_margin="10dp"
-        android:onClick="moveToWiFiPoints"/>
+        android:onClick="moveToWiFiPoints"/>!-->
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,6 +45,14 @@
         android:background="@android:color/transparent"
         android:layout_margin="10dp"
         android:onClick="moveToLibraries"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_event_white_24dp"
+        android:background="@android:color/transparent"
+        android:layout_margin="10dp"
+        android:onClick="moveToEvents"/>
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

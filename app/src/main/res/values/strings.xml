@@ -5,4 +5,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="data_by_str">Data provided by city wroclaw and open data initiative</string>
+    <string name="open_data_site_str">http://www.wroclaw.pl/open-data</string>
+    <string name="logo_of_open_data_wroclaw">logo of open data wroclaw</string>
+    <string name="created_by_jan_stoltman">Created by Jan Stoltman</string>
+    <string name="contact_stoltmanjan_gmail_com">Contact: stoltmanjan@gmail.com</string>
 </resources>
