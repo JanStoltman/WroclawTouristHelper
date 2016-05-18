@@ -9,26 +9,31 @@
         android:layout_height="wrap_content"
         android:id="@+id/info_data_tv"
         android:text="@string/data_by_str"
-        android:textColor="@color/white"/>
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_above="@+id/info_open_data_url"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/black" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/open_data_site_str"
         android:onClick="openOpenDataSite"
         android:id = "@+id/info_open_data_url"
-        android:layout_below="@+id/info_data_tv"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textColor="@color/white"/>
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_above="@+id/info_logo_iv"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black" />
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
         android:id="@+id/info_logo_iv"
-        android:layout_below="@+id/info_data_tv"
-        android:layout_toRightOf="@+id/info_open_data_url"
         android:contentDescription="@string/logo_of_open_data_wroclaw"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +42,8 @@
         android:layout_above="@+id/info_contact_tv"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:textSize="15sp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,6 +52,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/info_logo_iv"
         android:layout_alignEnd="@+id/info_logo_iv"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:textSize="12sp"/>
 
 </RelativeLayout>

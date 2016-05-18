@@ -29,7 +29,12 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar.Fullscreen">
         </activity>
+        <activity android:name=".EventsActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar.Fullscreen">
 
+        </activity>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAP2zo1V3qcDET5y2MC2_MNA2OZNKENx_g"/>
     </application>
 
 </manifest>

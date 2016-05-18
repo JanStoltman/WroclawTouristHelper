@@ -18,7 +18,6 @@ import com.bumptech.glide.request.target.SimpleTarget;
 
 import java.util.Calendar;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
@@ -66,17 +65,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://gis.um.wroc.pl/imap/?locale=pl&gui=classic&sessionID=223261")));
     }
 
-  //  public void moveToWiFiPoints(View view) {
-  //  }
-
-    public void moveToLibraries(View view) {
-    }
-
     public void moveToInfo(View view) {
         Intent intent = new Intent(this,InfoActivity.class);
         startActivity(intent);
     }
 
     public void moveToEvents(View view) {
+        Intent intent = new Intent(this,EventsActivity.class);
+        startActivity(intent);
     }
 }

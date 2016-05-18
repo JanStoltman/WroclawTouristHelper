@@ -45,6 +45,7 @@ import retrofit2.Retrofit;
 public class BikePointsActivity extends AppCompatActivity
         implements OnMapReadyCallback {
     ArrayList<BikePoint> bikePoints = new ArrayList<>();
+    GoogleMap googleMap;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,6 +63,7 @@ public class BikePointsActivity extends AppCompatActivity
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        this.googleMap = googleMap;
         googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
         googleMap.setIndoorEnabled(false);
         for (BikePoint b :
@@ -186,8 +188,21 @@ public class BikePointsActivity extends AppCompatActivity
                 }
                 bikePoints.add(bikePoint);
             }
+
+            addPointsToMap();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void addPointsToMap() {
+        if(googleMap != null){
+            for (BikePoint b :
+                    bikePoints) {
+                googleMap.addMarker(new MarkerOptions()
+                        .position(new LatLng(b.getSzerokoscGeo(), b.getDlugoscGeo()))
+                        .title(b.getLokalizacja()));
+            }
         }
     }
 }

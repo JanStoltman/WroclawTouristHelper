@@ -9,7 +9,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/ic_directions_bike_white_24dp"
+        android:src="@drawable/ic_event_white_36dp"
+        android:background="@android:color/transparent"
+        android:layout_margin="10dp"
+        android:onClick="moveToEvents"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_directions_bike_white_36dp"
         android:background="@android:color/transparent"
         android:layout_margin="10dp"
         android:onClick="moveToBikePoints"/>
@@ -17,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/ic_directions_bus_white_24dp"
+        android:src="@drawable/ic_directions_bus_white_36dp"
         android:background="@android:color/transparent"
         android:layout_margin="10dp"
         android:onClick="moveToBusStops"/>
@@ -25,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/ic_satellite_white_24dp"
+        android:src="@drawable/ic_satellite_white_36dp"
         android:background="@android:color/transparent"
         android:layout_margin="10dp"
         android:onClick="moveToMap"/>
@@ -37,27 +45,19 @@
         android:background="@android:color/transparent"
         android:layout_margin="10dp"
         android:onClick="moveToWiFiPoints"/>!-->
-    <ImageButton
+    <!--<ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:src="@drawable/ic_local_library_white_24dp"
         android:background="@android:color/transparent"
         android:layout_margin="10dp"
-        android:onClick="moveToLibraries"/>
+        android:onClick="moveToLibraries"/>!-->
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/ic_event_white_24dp"
-        android:background="@android:color/transparent"
-        android:layout_margin="10dp"
-        android:onClick="moveToEvents"/>
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/ic_info_outline_white_24dp"
+        android:src="@drawable/ic_info_outline_white_36dp"
         android:background="@android:color/transparent"
         android:layout_margin="10dp"
         android:onClick="moveToInfo"/>
